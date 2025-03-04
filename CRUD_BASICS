@@ -1,0 +1,52 @@
+
+// create a database if the given db not exist then mongodb will keep it that name once when the collection will be created
+use college 
+
+//college->db name
+
+
+
+//insert[create] the data using insertOne -> only create one item at the time
+//insertMany -> create a multiple item 
+
+
+db.studDetails.insertMany([
+  
+// studDetails--> collection name only save by mongodb when the data will be create then the collection will be created
+  {studName:"james",details:{Department:"Computer Science",Year:"II"}},
+  {studName:"jackie",details:{Department:"Commerce",Year:"I"}},
+  {studName:"julie",details:{Department:"Biology",Year:"III"}},
+  {studName:"john",details:{Department:"Biology",Year:"I"}},
+  {studName:"himson",details:{Department:"Maths",Year:"II"}}
+  ])
+  
+// read the value with the help of find()  
+// db.studDetails.find({
+//   "details.Department":"Computer Science"
+// })
+
+// // findOne return only first filtered data 
+// db.studDetails.findOne({studName:"james"})
+
+
+
+// update the one value 
+
+// db.studDetails.updateOne({studName:"james"},{$set:{"details.Year":"III"}})
+
+// update the multiple values
+
+// db.studDetails.updateMany({"details.Department":"Biology"},{$set:{"details.Year":3}})
+  
+  
+//delete the single data
+
+//db.studDetails.deleteOne({studName:"himson"})
+
+//db.studDetails.find()
+
+//delete the multiple data
+
+
+db.studDetails.deleteMany({"details.Department":"Biology"})
+db.studDetails.find()
