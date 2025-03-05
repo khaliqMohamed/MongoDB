@@ -1,0 +1,21 @@
+// PROJECTIONS
+
+// used to take a particular data from the documents 
+
+
+use employee
+db.empdetails.insertMany([
+    {empName:"rahul",age:25,professionalDetails:{desig:"py dev",salary:45000}},
+    {empName:"ravi",age:23,professionalDetails:{desig:"ruby dev",salary:60000}},
+    {empName:"ram",age:27,professionalDetails:{desig:"UI/UX",salary:100000}},
+    {empName:"rash",age:25,professionalDetails:{desig:"java dev",salary:40000}},
+    {empName:"rio",age:28,professionalDetails:{desig:"manager",salary:150000}},
+])
+db.empdetails.find({"professionalDetails.salary":{$gt:50000}},{empName:1,_id:0,empStatus:"on duty"})
+
+// in above example, first {} denotes filter the documents using the conditions & second {} denotes projections we give which field do you want like this example we need empname only 
+so we put that follow :1 ->  denotes true, we want this field 
+_id : 0 -> 0 denotes false, we don't want it
+empStatus:"on duty" -> denotes to add this field to all the collections only that projection query running time & not affect original database
+
+db.empdetails.find()
