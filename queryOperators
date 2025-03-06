@@ -1,0 +1,31 @@
+db.students.insertMany([
+  { id: 1, name: 'Ryan', gender: 'M',address:"north street" ,age:21},
+  { id: 2, name: 'Joanna', gender: 'F',address:"south street",age:26},
+    { id: 3, name: 'Alan', gender: 'M',address:"jim kong street",age:23 },
+  { id: 4, name: 'Jack', gender: 'F' ,address:"jae usos street",age:25},
+    { id: 5, name: 'Ragul', gender: 'M',address:"easternyard street",age:24 },
+  { id: 6, name: 'Zoro', gender: 'F',address:"setherland street",age:26 },
+]);
+// db.students.find({age:{$gt:23}},{id:0,_id:0})
+// db.students.find({age:{$lt:25}},{id:0,_id:0})
+// db.students.find({gender:{$eq:'F'}},{id:0,_id:0})
+// db.students.find({age:{$ne:26}},{id:0,_id:0})
+// db.students.find({age:{$gte:23}},{id:0,_id:0})
+// db.students.find({age:{$lte:23}},{id:0,_id:0})
+// db.students.find({$and :[{
+//     gender:{$eq:"M"},
+//     age:{$gt:23}  
+// }]},{name : 1,_id:0})
+// db.students.find({$or :[{
+//     gender:{$eq:"M"},
+//     age:{$lte:23}  
+// }]},{name : 1,_id:0})
+
+// db.students.find({$where:function(){
+//     return this.name=="Alan";
+// }}) this is not working check it with lap
+
+// db.students.find({name : {
+//     $regex : "^j",$options : "i" //^starts with j options used to check the value with case insensitive[i] 
+// }})
+
